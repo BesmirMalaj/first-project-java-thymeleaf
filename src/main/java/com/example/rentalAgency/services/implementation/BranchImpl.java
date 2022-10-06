@@ -27,8 +27,7 @@ public class BranchImpl implements BranchService {
         branch1.setBranchName(branch.getBranchName());
         branch1.setAdress(branch.getAdress());
         branch1.setRental(branch.getRental());
-        branchRepository.save(branch1);
-        return branch;
+         return branchRepository.save(branch1);
     }
 
     @Override
