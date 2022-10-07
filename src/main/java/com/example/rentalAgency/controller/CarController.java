@@ -5,9 +5,9 @@ import com.example.rentalAgency.services.implementation.CarImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("car")
@@ -17,7 +17,19 @@ public class CarController {
     private CarImpl carImpl;
 
     @PostMapping("/addCar")
-    public ResponseEntity<Car> addCar(Car car){
+    public ResponseEntity<Car> addCar( Car car){
         return new ResponseEntity<>(carImpl.save(car), HttpStatus.OK);
     }
+
+    @GetMapping("/automatic")
+    public ResponseEntity<List<Car>> automaticCars(){
+        return new ResponseEntity<>(carImpl.findAllAutomatic(),HttpStatus.OK);
+    }
+
+    @GetMapping("/model/{name}")
+    public ResponseEntity<List<Car>> findByModel(@PathVariable("name") String name){
+        return new ResponseEntity<>(carImpl.findAllByModel(name),HttpStatus.OK);
+    }
+
+
 }

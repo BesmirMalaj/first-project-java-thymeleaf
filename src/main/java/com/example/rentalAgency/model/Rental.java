@@ -1,5 +1,6 @@
 package com.example.rentalAgency.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,7 +29,9 @@ public class Rental {
     @Column(name = "contact_address")
     private String contactAdress;
 
-   @OneToOne(fetch = FetchType.EAGER)
-   private Owner owner;
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Owner owner;
+
+
 
 }

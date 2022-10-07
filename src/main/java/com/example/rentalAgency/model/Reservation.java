@@ -40,6 +40,7 @@ public class Reservation {
     private Car car;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    private Branch branch;
+    private Customer customer;
+
 
 }

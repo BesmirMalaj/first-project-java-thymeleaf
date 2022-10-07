@@ -5,6 +5,8 @@ import com.example.rentalAgency.services.implementation.RentalImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,8 +17,8 @@ public class RentalController {
     @Autowired
     private RentalImpl rentalImpl;
 
-    @RequestMapping("/addRental")
-    public ResponseEntity<Rental> addRental(Rental rental){
+    @PostMapping("/addRental")
+    public ResponseEntity<Rental> addRental( Rental rental){
         return new ResponseEntity<>(rentalImpl.addRental(rental), HttpStatus.OK);
     }
 

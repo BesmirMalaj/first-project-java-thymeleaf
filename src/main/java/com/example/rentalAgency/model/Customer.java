@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -32,11 +33,13 @@ public class Customer {
     private String address;
 
     @Column(name = "customer_phone_number")
-    private Integer phoneNumber;
+    private String phoneNumber;
 
     @Column(name="customer_driver_license")
     private String driverLicense;
 
     @Column(name = "customer_age")
-    private Integer age;
+    private int age;
+
+
 }

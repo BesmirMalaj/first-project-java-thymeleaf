@@ -5,6 +5,7 @@ import com.example.rentalAgency.repository.OwnerRepository;
 import com.example.rentalAgency.services.OwnerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.transaction.Transactional;
 import java.util.List;

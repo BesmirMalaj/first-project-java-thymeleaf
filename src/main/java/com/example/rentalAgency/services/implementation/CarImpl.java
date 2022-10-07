@@ -49,4 +49,15 @@ public class CarImpl implements CarService {
     public List<Car> findAll() {
        return carRepository.findAll();
     }
+
+
+    @Override
+    public List<Car> findAllAutomatic() {
+        return carRepository.findAllAutomaticCars();
+    }
+
+    @Override
+    public List<Car> findAllByModel(String name) {
+        return carRepository.findAllByModel(name);
+    }
 }
