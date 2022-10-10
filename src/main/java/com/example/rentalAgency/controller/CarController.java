@@ -31,5 +31,10 @@ public class CarController {
         return new ResponseEntity<>(carImpl.findAllByModel(name),HttpStatus.OK);
     }
 
+    @GetMapping("/list")
+    public ResponseEntity<List<Car>> findAll(){
+        return new ResponseEntity<>(carImpl.findAll(),HttpStatus.OK);
+    }
+
 
 }

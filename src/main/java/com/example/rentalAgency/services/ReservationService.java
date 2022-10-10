@@ -13,6 +13,8 @@ public interface ReservationService {
 
     Reservation updateReservation(Long id, Reservation reservation);
 
+    Reservation findById(Long id);
+
     void deleteReservation(Long id);
 
 }

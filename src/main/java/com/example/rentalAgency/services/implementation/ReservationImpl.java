@@ -20,11 +20,13 @@ public class ReservationImpl implements ReservationService {
 
     @Override
     public Reservation addReservation(Reservation reservation) {
+
         int dataFillimit=reservation.getRentalDate().getDayOfMonth();
         int dataMbarimit=reservation.getReturnDate().getDayOfMonth();
         int ditetTotale=(dataMbarimit-dataFillimit)+1;
         int shumaPerDite=reservation.getCar().getFeePerDay();
         int shumaTotale=ditetTotale*shumaPerDite;
+        reservation.setDateOfBooking(LocalDate.now());
         reservation.setTotalAmount(shumaTotale);
         return reservationRepository.save(reservation);
     }
@@ -42,7 +44,13 @@ public class ReservationImpl implements ReservationService {
         reservation1.setRentalDate(reservation.getRentalDate());
         reservation1.setDateOfBooking(reservation.getDateOfBooking());
         reservation1.setTotalAmount(reservation.getTotalAmount());
+        reservation1.setCustomer(reservation.getCustomer());
         return reservationRepository.save(reservation1);
+    }
+
+    @Override
+    public Reservation findById(Long id) {
+        return reservationRepository.findById(id).get();
     }
 
     @Override

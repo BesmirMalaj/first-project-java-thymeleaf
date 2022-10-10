@@ -36,11 +36,14 @@ public class Reservation {
     @Column(name = "reservation_total_amount")
     private Integer totalAmount;
 
-    @OneToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     private Car car;
 
     @ManyToOne(fetch = FetchType.EAGER)
     private Customer customer;
+
+    @OneToOne(fetch = FetchType.EAGER)
+    private Employee employee;
 
 
 }
