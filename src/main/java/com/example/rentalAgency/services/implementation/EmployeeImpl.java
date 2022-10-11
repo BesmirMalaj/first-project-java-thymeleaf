@@ -4,6 +4,8 @@ import com.example.rentalAgency.model.Employee;
 import com.example.rentalAgency.repository.EmployeeRepository;
 import com.example.rentalAgency.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -15,6 +17,12 @@ public class EmployeeImpl implements EmployeeService {
 
     @Autowired
     private EmployeeRepository employeeRepository;
+
+    PasswordEncoder passwordEncoder;
+
+    public EmployeeImpl() {
+        this.passwordEncoder = new BCryptPasswordEncoder();
+    }
 
     @Override
     public List<Employee> findAll() {
@@ -28,6 +36,8 @@ public class EmployeeImpl implements EmployeeService {
 
     @Override
     public Employee addEmployee(Employee employee) {
+        String encodedPassword = this.passwordEncoder.encode(employee.getPassword());
+        employee.setPassword(encodedPassword);
         return employeeRepository.save(employee);
     }
 

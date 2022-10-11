@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -15,6 +16,7 @@ import java.util.Set;
 @Getter
 @Setter
 @Table(name = "employee")
+@Component
 public class Employee {
 
     @Id
@@ -34,6 +36,8 @@ public class Employee {
     @Column(name = "employee_password")
     private String password;
 
+    @Column(name = "employee_role")
+    private String role;
 
     @Column(name = "employee_enabled")
     private boolean enabled;

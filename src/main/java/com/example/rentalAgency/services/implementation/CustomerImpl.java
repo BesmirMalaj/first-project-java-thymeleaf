@@ -4,6 +4,8 @@ import com.example.rentalAgency.model.Customer;
 import com.example.rentalAgency.repository.CustomerRepository;
 import com.example.rentalAgency.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -15,6 +17,7 @@ public class CustomerImpl implements CustomerService {
 
     @Autowired
     private CustomerRepository customerRepository;
+
 
     @Override
     public Customer addCustomer(Customer customer) {
