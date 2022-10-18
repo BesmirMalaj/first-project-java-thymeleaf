@@ -1,0 +1,547 @@
+{
+	"info": {
+		"_postman_id": "0a7aeee6-3761-4300-83ac-20efd715f882",
+		"name": "Rental Car Agency ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Owner",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"alger_22\",\r\n    \"password\":\"1234\",\r\n    \"email\":\"alger@gmail.com\",\r\n    \"name\":\"Alger\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/owner/addOwner/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"owner",
+						"addOwner",
+						""
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "alger",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Rental",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/rental/addRental?name=Tirana Rent&internetDomain=www.tirana-rent.al&contactAdress=Rruga Elbasanit&owner=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rental",
+						"addRental"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Tirana Rent"
+						},
+						{
+							"key": "internetDomain",
+							"value": "www.tirana-rent.al"
+						},
+						{
+							"key": "contactAdress",
+							"value": "Rruga Elbasanit"
+						},
+						{
+							"key": "owner",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Branch",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/branch/addBranch?branchName=Tirana Rent 2&address=\"Rruga Durresit\"&rental=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"branch",
+						"addBranch"
+					],
+					"query": [
+						{
+							"key": "branchName",
+							"value": "Tirana Rent 2"
+						},
+						{
+							"key": "address",
+							"value": "\"Rruga Durresit\""
+						},
+						{
+							"key": "rental",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Car",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "model",
+							"value": "A7",
+							"type": "default"
+						},
+						{
+							"key": "year",
+							"value": "2012",
+							"type": "default"
+						},
+						{
+							"key": "color",
+							"value": "Black",
+							"type": "default"
+						},
+						{
+							"key": "status",
+							"value": "AVAILABLE",
+							"type": "default"
+						},
+						{
+							"key": "mileage",
+							"value": "180",
+							"type": "default"
+						},
+						{
+							"key": "feePerDay",
+							"value": "20",
+							"type": "default"
+						},
+						{
+							"key": "totalAmountFromCar",
+							"value": "0",
+							"type": "default"
+						},
+						{
+							"key": "gearbox",
+							"value": "AUTOMATIC",
+							"type": "default"
+						},
+						{
+							"key": "branch",
+							"value": "4",
+							"type": "default"
+						},
+						{
+							"key": "brand",
+							"value": "Audi",
+							"type": "default"
+						},
+						{
+							"key": "imageUrl",
+							"value": "https://i.autobox.al/files/11-2020/ad12076/mercedes-benz-c-class-1958717828_large.jpeg",
+							"type": "default"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/car/addCar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"car",
+						"addCar"
+					],
+					"query": [
+						{
+							"key": "model",
+							"value": "Benz",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/employee/save?firstName=Xhoni&lastName=Bravo&role=USER&branch=4&enabled=true&username=maltin&password=1234",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"save"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "Xhoni"
+						},
+						{
+							"key": "lastName",
+							"value": "Bravo"
+						},
+						{
+							"key": "role",
+							"value": "USER"
+						},
+						{
+							"key": "branch",
+							"value": "4"
+						},
+						{
+							"key": "enabled",
+							"value": "true"
+						},
+						{
+							"key": "username",
+							"value": "maltin"
+						},
+						{
+							"key": "password",
+							"value": "1234"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/employee/update?firstName=Alger&lastName=Pire&username=gjoku&id=12&password=1234&role=USER&enabled=1&branch=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"update"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "Alger"
+						},
+						{
+							"key": "lastName",
+							"value": "Pire"
+						},
+						{
+							"key": "username",
+							"value": "gjoku"
+						},
+						{
+							"key": "id",
+							"value": "12"
+						},
+						{
+							"key": "password",
+							"value": "1234"
+						},
+						{
+							"key": "role",
+							"value": "USER"
+						},
+						{
+							"key": "enabled",
+							"value": "1"
+						},
+						{
+							"key": "branch",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Altin\",\r\n    \"surname\":\"Gjika\",\r\n    \"email\": \"altingjika22@gmail.com\",\r\n    \"address\":\"Rruga Pjeter budi\",\r\n    \"phoneNumber\":\"0684444135\",\r\n    \"driverLicense\":\"K01102016L\",\r\n    \"age\":20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/customer/addNew",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"addNew"
+					],
+					"query": [
+						{
+							"key": "dateOfBooking",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Reservation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "dateOfBooking",
+							"value": "14-10-2022",
+							"type": "default",
+							"disabled": true
+						},
+						{
+							"key": "rentalDate",
+							"value": "19-10-2022",
+							"type": "default"
+						},
+						{
+							"key": "returnDate",
+							"value": "20-10-2022",
+							"type": "default"
+						},
+						{
+							"key": "car",
+							"value": "6",
+							"type": "default"
+						},
+						{
+							"key": "customer",
+							"value": "9",
+							"type": "default"
+						},
+						{
+							"key": "employee",
+							"value": "7",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/reservation/addReservation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reservation",
+						"addReservation"
+					],
+					"query": [
+						{
+							"key": "dateOfBooking",
+							"value": "14-10-2022",
+							"disabled": true
+						},
+						{
+							"key": "rentalDate",
+							"value": "15-10-2022",
+							"disabled": true
+						},
+						{
+							"key": "returnDate",
+							"value": "18-10-2022",
+							"disabled": true
+						},
+						{
+							"key": "car",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "branch",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Car By model",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/car/model/a7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"car",
+						"model",
+						"a7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find all Automatic Cars",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/car/automatic",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"car",
+						"automatic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User check",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "altin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user/home",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"home"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Check",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "eltin",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/admin/home",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"home"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
