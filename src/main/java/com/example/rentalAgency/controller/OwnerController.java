@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/owner")
+@CrossOrigin(origins = "http://localhost:4200")
 public class OwnerController {
 
     @Autowired
@@ -24,6 +25,12 @@ public class OwnerController {
     @GetMapping("/listAll")
     public ResponseEntity<List<Owner>> listOwner(){
         return new ResponseEntity<>(ownerImpl.findAllOwners(),HttpStatus.OK);
+    }
+
+    @DeleteMapping("/deleteOwner")
+    public ResponseEntity<String> deleteById(@RequestBody Long id){
+        ownerImpl.deleteOwner(id);
+        return new ResponseEntity<>("Deleted Successfully",HttpStatus.OK);
     }
 
 

@@ -21,25 +21,25 @@ public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "employee_id")
+    @Column(name = "id")
     private Long id;
 
-    @Column(name = "employee_first_name")
+    @Column(name = "first_name")
     private String firstName;
 
-    @Column(name = "employee_last_name")
+    @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "employee_username")
+    @Column(name = "username")
     private String username;
 
-    @Column(name = "employee_password")
+    @Column(name = "password")
     private String password;
 
-    @Column(name = "employee_role")
+    @Column(name = "role")
     private String role;
 
-    @Column(name = "employee_enabled")
+    @Column(name = "enabled")
     private boolean enabled;
 
     @ManyToOne(fetch = FetchType.EAGER)

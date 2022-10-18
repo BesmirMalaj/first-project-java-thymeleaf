@@ -4,6 +4,8 @@ import com.example.rentalAgency.model.Owner;
 import com.example.rentalAgency.repository.OwnerRepository;
 import com.example.rentalAgency.services.OwnerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -17,8 +19,16 @@ public class OwnerImpl implements OwnerService {
     @Autowired
     private OwnerRepository ownerRepository;
 
+    PasswordEncoder passwordEncoder;
+
+    public OwnerImpl() {
+        this.passwordEncoder = new BCryptPasswordEncoder();
+    }
+
     @Override
     public Owner addOwner(Owner owner) {
+        String encodedPassword=this.passwordEncoder.encode(owner.getPassword());
+        owner.setPassword(encodedPassword);
         return ownerRepository.save(owner);
     }
 

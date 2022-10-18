@@ -25,7 +25,7 @@ public class BranchImpl implements BranchService {
     public Branch updateBranch(Long id, Branch branch) {
         Branch branch1 = branchRepository.findById(id).get();
         branch1.setBranchName(branch.getBranchName());
-        branch1.setAdress(branch.getAdress());
+        branch1.setAddress(branch.getAddress());
         branch1.setRental(branch.getRental());
          return branchRepository.save(branch1);
     }

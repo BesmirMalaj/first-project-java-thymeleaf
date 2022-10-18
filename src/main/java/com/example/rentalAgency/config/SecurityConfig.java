@@ -32,8 +32,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.cors().and().csrf().disable()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST).permitAll()
+                .antMatchers("/car/**").permitAll()
                 .antMatchers("/user/**").hasAuthority("USER")
                 .antMatchers("/admin/**").hasAuthority("ADMIN")
                 .anyRequest().authenticated().and().httpBasic();
+        //perdorim nga nje antMatchers per secilin (do te kete (1) per employee, (2) per manager, (3) per owner,
+        // (4) for all do kemi nga nje
+        //endpoint te vecante per manager, owner dhe dhe employee, te cilet do te kene funx e veta, nderkohe endpointi
+        // for all do te jete publik per te gjtihe
     }
 }

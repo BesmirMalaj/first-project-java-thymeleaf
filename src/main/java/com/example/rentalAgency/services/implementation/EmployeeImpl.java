@@ -36,9 +36,16 @@ public class EmployeeImpl implements EmployeeService {
 
     @Override
     public Employee addEmployee(Employee employee) {
-        String encodedPassword = this.passwordEncoder.encode(employee.getPassword());
-        employee.setPassword(encodedPassword);
-        return employeeRepository.save(employee);
+        if(employeeRepository.findEmployeeByUsername(employee.getUsername()) != null){
+            System.out.println("Username ekziston");
+            return employee;
+        }
+        else {
+            String encodedPassword = this.passwordEncoder.encode(employee.getPassword());
+            employee.setPassword(encodedPassword);
+            return employeeRepository.save(employee);
+        }
+
     }
 
     @Override
@@ -47,7 +54,12 @@ public class EmployeeImpl implements EmployeeService {
         employee1.setBranch(employee.getBranch());
         employee1.setFirstName(employee.getFirstName());
         employee1.setPassword(employee.getPassword());
-        employee1.setUsername(employee.getUsername());
+        if(employeeRepository.findEmployeeByUsername(employee.getUsername())==null){
+            employee1.setUsername(employee.getUsername());
+        }
+        else {
+            System.out.println("Username ekziston");
+        }
         employee1.setLastName(employee.getLastName());
         employeeRepository.save(employee1);
         return employee1;

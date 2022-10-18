@@ -21,6 +21,10 @@ public class Car {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(name = "car_brand")
+    private String brand;
+
+
     @Column(name = "car_name")
     private String model;
 
@@ -37,6 +41,10 @@ public class Car {
 
     @Column(name = "car_mileage")
     private Integer mileage;
+
+    @Column(name = "car_image")
+    private String imageUrl;
+
 
     @Column(name = "car_fee_per_day")
     private Integer feePerDay;

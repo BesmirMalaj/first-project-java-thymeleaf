@@ -23,8 +23,8 @@ public class Branch {
     @Column(name = "branch_name")
     private String branchName;
 
-    @Column(name = "branch_adress")
-    private String adress;
+    @Column(name = "branch_address")
+    private String address;
 
 
     @ManyToOne(fetch = FetchType.EAGER)

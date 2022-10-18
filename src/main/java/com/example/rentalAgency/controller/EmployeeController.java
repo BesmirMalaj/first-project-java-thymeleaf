@@ -21,5 +21,11 @@ public class EmployeeController {
         return new ResponseEntity<>(employeeImpl.addEmployee(employee), HttpStatus.OK);
     }
 
+    @PostMapping("/update")
+    public ResponseEntity<Employee> updateEmployee(Long id, Employee employee){
+        return new ResponseEntity<>(employeeImpl.updateEmployee(id,employee),HttpStatus.OK);
+    }
+
+
 
 }
