@@ -56,6 +56,7 @@ public class Car {
     @Column(name = "car_gearbox")
     private Gearbox gearbox;
 
+
     @ManyToOne(fetch = FetchType.EAGER)
     private Branch branch;
 
