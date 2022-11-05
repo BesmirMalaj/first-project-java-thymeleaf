@@ -1,17 +1,29 @@
 package com.example.rentalAgency.controller;
 
 
+import com.example.rentalAgency.model.Car;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping("/admin")
-public class AdminController {
+import java.util.List;
 
-    @GetMapping("/home")
-    public String home(){
-        return "This is for admin";
+@Controller
+public class AdminController {
+    @RequestMapping("/admin")
+    public String admin() {
+
+        return "admin";
     }
+
+    @RequestMapping("/login")
+    public String login() {
+
+        return "login";
+    }
+
 
 }

@@ -1,197 +1,154 @@
+/*
+
+MIT License
+
+Copyright (c) 2021 LessTheory Academy
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+*/
+
 * {
-  padding: 0px;
-  margin: 0px;
+  padding:0px;
+  margin:0px;
+  box-sizing: border-box;
 }
+
+.pointer {
+  cursor:pointer;
+}
+
+a {
+  color:#fff;
+  text-decoration: none;
+}
+
+/* Unvisited link  */
+a:visited {color:#fff;} /* Visited link    */
+a:hover {color:#fff;}   /* Mouse over link */
+a:active {color:#fff;}  /* Selected link   */
+
+.btn-info {
+  color: #fff;
+  background-color: #545656;
+  border-color: #ffffff;
+}
+
+.btn-info.active.focus, .btn-info.active:focus, .btn-info.active:hover, .btn-info:active.focus, .btn-info:active:focus, .btn-info:active:hover, .open>.dropdown-toggle.btn-info.focus, .open>.dropdown-toggle.btn-info:focus, .open>.dropdown-toggle.btn-info:hover,
+.btn-info:hover,
+.btn-info:active,
+.btn-info:focus,
+.btn-info:visited {
+  background-color: #323535;
+  border-color: #ffffff;
+}
+
+.align-right {
+  text-align:right;
+}
+
 body {
-  background-color: lightgreen;
-}
-header {
   background-color: black;
-  color: white;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:16px;
+}
+
+header {
+  position: fixed;
+  width:100%;
+  top:0px;
+  left:0px;
+  height:50px;
+  z-index: 1;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  height: 15vh;
-  box-shadow: 5px 5px 10px rgb(0,0,0,0.3);
+  background-color: #000;
+  opacity: 0.7;
+  padding:80px 203px 10px 200px;
+  font-size:30px;
 }
-h1 {
-  letter-spacing: 1.5vw;
-  font-family: 'system-ui';
-  text-transform: uppercase;
-  text-align: center;
-}
+
 main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 75vh;
-  width: 100%;
-  background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Mountains-1412683.svg/1280px-Mountains-1412683.svg.png) no-repeat center center;
-  background-size: cover;
+  margin:150px 200px;
 }
-.form_class {
-  width: 500px;
-  padding: 40px;
-  border-radius: 8px;
-  background-color: white;
-  font-family: 'system-ui';
-  box-shadow: 5px 5px 10px rgb(0,0,0,0.3);
+
+.grid-item {
+  position: relative;
+  width: 14.28%;
+  border:5px solid black;
+  transition: transform .2s;
 }
-.form_div {
-  text-transform: uppercase;
+
+.grid-item:hover {
+  transform: scale(1.03);
+  z-index:200;
 }
-.form_div > label {
-  letter-spacing: 3px;
-  font-size: 1rem;
-}
-.info_div {
-  text-align: center;
-  margin-top: 20px;
-}
-.info_div {
-  letter-spacing: 1px;
-}
-.field_class {
-  width: 100%;
-  border-radius: 6px;
-  border-style: solid;
-  border-width: 1px;
-  padding: 5px 0px;
-  text-indent: 6px;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  font-family: 'system-ui';
-  font-size: 0.9rem;
-  letter-spacing: 2px;
-}
-.submit_class {
-  border-style: none;
-  border-radius: 5px;
-  background-color: #FFE6D4;
-  padding: 8px 20px;
-  font-family: 'system-ui';
-  text-transform: uppercase;
-  letter-spacing: .8px;
-  display: block;
-  margin: auto;
-  margin-top: 10px;
-  box-shadow: 2px 2px 5px rgb(0,0,0,0.2);
+
+.grid-item > i {
+  position: absolute;
+  top: 5px;
+  right: 5px;
   cursor: pointer;
 }
-footer {
-  height: 10vh;
-  background-color: black;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: -5px -5px 10px rgb(0,0,0,0.3);
-}
-footer > p {
-  text-align: center;
-  font-family: 'system-ui';
-  letter-spacing: 3px;
-}
-footer > p > a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-}* {
-  padding: 0px;
-  margin: 0px;
-}
-body {
-  background-color: lightgreen;
-}
-header {
-  background-color: black;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 15vh;
-  box-shadow: 5px 5px 10px rgb(0,0,0,0.3);
-}
-h1 {
-  letter-spacing: 1.5vw;
-  font-family: 'system-ui';
-  text-transform: uppercase;
-  text-align: center;
-}
-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 75vh;
+
+.grid-item img {
   width: 100%;
-  background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Mountains-1412683.svg/1280px-Mountains-1412683.svg.png) no-repeat center center;
-  background-size: cover;
 }
-.form_class {
-  width: 500px;
-  padding: 40px;
-  border-radius: 8px;
-  background-color: white;
-  font-family: 'system-ui';
-  box-shadow: 5px 5px 10px rgb(0,0,0,0.3);
+
+main.admin {
+  max-width:610px;
+  margin:115px auto;
 }
-.form_div {
-  text-transform: uppercase;
-}
-.form_div > label {
-  letter-spacing: 3px;
-  font-size: 1rem;
-}
-.info_div {
-  text-align: center;
-  margin-top: 20px;
-}
-.info_div {
-  letter-spacing: 1px;
-}
-.field_class {
-  width: 100%;
-  border-radius: 6px;
-  border-style: solid;
-  border-width: 1px;
-  padding: 5px 0px;
-  text-indent: 6px;
-  margin-top: 10px;
+
+.add-photo {
+  display: inline-block;
   margin-bottom: 20px;
-  font-family: 'system-ui';
-  font-size: 0.9rem;
-  letter-spacing: 2px;
-}
-.submit_class {
-  border-style: none;
-  border-radius: 5px;
-  background-color: #FFE6D4;
-  padding: 8px 20px;
-  font-family: 'system-ui';
-  text-transform: uppercase;
-  letter-spacing: .8px;
-  display: block;
-  margin: auto;
-  margin-top: 10px;
-  box-shadow: 2px 2px 5px rgb(0,0,0,0.2);
   cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
-footer {
-  height: 10vh;
-  background-color: black;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: -5px -5px 10px rgb(0,0,0,0.3);
+
+.admin-table {
+  border-spacing:0;
 }
-footer > p {
-  text-align: center;
-  font-family: 'system-ui';
-  letter-spacing: 3px;
+
+.admin-table thead th {
+  border-bottom:2px solid #fff;
 }
-footer > p > a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
+
+.admin-table tbody td {
+  border-bottom:1px solid #fff;
+}
+
+.admin-table th,
+.admin-table td {
+  padding:30px;
+}
+
+.admin-table td:nth-child(3) {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.admin-table .edit,
+.admin-table .delete {
+  text-align:center;
 }

@@ -5,14 +5,18 @@ import com.example.rentalAgency.services.implementation.ReservationImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/reservation")
 public class ReservationController {
-
+    @GetMapping
+    public String index() {
+        return "car";
+    }
     @Autowired
     private ReservationImpl reservationImpl;
 
@@ -29,6 +33,7 @@ public class ReservationController {
     @GetMapping("/findById/{id}")
     public ResponseEntity<Reservation> findById(@PathVariable("id") Long id){
         return new ResponseEntity<>(reservationImpl.findById(id),HttpStatus.OK);
+
     }
 
     @DeleteMapping("/delete/{id}")
