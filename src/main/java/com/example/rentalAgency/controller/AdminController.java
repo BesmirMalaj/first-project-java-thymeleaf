@@ -18,12 +18,30 @@ public class AdminController {
 
         return "admin";
     }
+    @RequestMapping("/contact")
+    public String contact() {
+
+        return "contact";
+    }
+    @RequestMapping("/about")
+    public String about() {
+
+        return "about";
+    }
+    @RequestMapping("/pricing")
+    public String pricing() {
+
+        return "pricing";
+    }
+    @RequestMapping("/services")
+    public String services() {
+
+        return "services";
+    }
 
     @RequestMapping("/login")
     public String login() {
 
         return "login";
     }
-
-
 }
