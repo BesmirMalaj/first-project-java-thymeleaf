@@ -51,7 +51,7 @@
 <main class="admin">
 
 	<h1>Admin</h1>
-	<form name='f' action="login" method='POST'>
+	<form name='f'th:action="@{/login}" th:object="${admin}" method="post">
 		<div class="form-group">
 			<label for="username">Username</label>
 			<input type="text" class="form-control" name="username" placeholder="Username">

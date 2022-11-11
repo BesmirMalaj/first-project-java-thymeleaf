@@ -1,13 +1,14 @@
 package com.example.rentalAgency.controller;
 
 
+import com.example.rentalAgency.model.Admin;
 import com.example.rentalAgency.model.Car;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -39,9 +40,12 @@ public class AdminController {
         return "services";
     }
 
-    @RequestMapping("/login")
-    public String login() {
 
-        return "login";
+    @PostMapping("/login")
+    public String login(@ModelAttribute Admin admin, Model model) {
+        model.addAttribute("admin", admin);
+
+        return "admin";
     }
+
 }
